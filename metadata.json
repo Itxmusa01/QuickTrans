@@ -1,0 +1,5 @@
+
+{
+  "name": "QuickTrans - Language Translator",
+  "description": "A web-based tool to translate English text into a selected language (Spanish, German, Russian, or French) using the Gemini API."
+}

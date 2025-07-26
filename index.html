@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickTrans - Language Translator</title>
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="index.tsx"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.11.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <main class="container">
+      <header class="app-header">
+        <h1>QuickTrans</h1>
+        <p>Translate English to Spanish, German, Russian, and French.</p>
+      </header>
+
+      <section class="input-section" aria-labelledby="input-label">
+        <h2 id="input-label" class="sr-only">English Input</h2>
+        <div class="input-wrapper">
+          <textarea
+            id="input-text"
+            placeholder="Enter English text to translate..."
+            aria-label="English text to translate"
+            rows="4"
+          ></textarea>
+        </div>
+        <div class="controls-wrapper">
+          <div class="select-wrapper">
+            <label for="language-select" class="sr-only">Target Language</label>
+            <select id="language-select" aria-label="Select target language">
+              <option value="Spanish">Spanish</option>
+              <option value="German">German</option>
+              <option value="Russian">Russian</option>
+              <option value="French">French</option>
+            </select>
+          </div>
+          <button id="translate-btn" aria-label="Translate text">
+            <span class="btn-text">Translate</span>
+            <div id="loader" class="loader hidden"></div>
+          </button>
+        </div>
+      </section>
+
+      <section id="output-section" class="output-section hidden" aria-live="polite">
+        <div class="output-card" id="translation-card">
+          <div class="card-header">
+            <h3 id="output-language-header"></h3>
+            <button class="copy-btn" data-target="translation-output" aria-label="Copy translation">Copy</button>
+          </div>
+          <p id="translation-output" class="translation-text"></p>
+        </div>
+      </section>
+
+      <div id="error-container" class="error-message hidden" role="alert"></div>
+
+    </main>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
